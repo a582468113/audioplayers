@@ -537,7 +537,7 @@ public class SwiftAudioplayersPlugin: NSObject, FlutterPlugin {
                 playerInfo.url = url
                 
                 // stream player position
-                let interval: CMTime = toCMTime(millis: 0.2)
+                let interval: CMTime = toCMTime(millis: 0.05)
                 let timeObserver = player.addPeriodicTimeObserver(forInterval: interval, queue: nil) {
                     [weak self] time in
                     self!.onTimeInterval(playerId: playerId, time: time)
