@@ -514,7 +514,7 @@ public class SwiftAudioplayersPlugin: NSObject, FlutterPlugin {
         
         let playbackStatus = playerInfo.player?.currentItem?.status
         
-        if url != playerInfo.url || playbackStatus == .failed {
+        if url != playerInfo.url || playbackStatus == .failed || !playerInfo.isPlaying {
             let parsedUrl = isLocal ? URL.init(fileURLWithPath: url) : URL.init(string: url)!
             let playerItem = AVPlayerItem.init(url: parsedUrl)
             
